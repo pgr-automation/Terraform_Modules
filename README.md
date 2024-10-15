@@ -9,7 +9,8 @@ provider "aws" {
 }
 
 module "ec2_instance" {
-  source                     = "github.com/pgr-automation/Terraform_Modules//Modules/ec2-instance-module"  ami_id                     = "ami-06b21ccaeff8cd686"
+  source                     = "github.com/pgr-automation/Terraform_Modules//Modules/ec2-instance-module"  
+  ami_id                     = "ami-06b21ccaeff8cd686"
   instance_type              = "t2.micro"
   subnet_ids                 = ["subnet-0a862bc92237aee82", "subnet-060ad16b0550c101c"]
   key_name                   = "ssh-grp-key"
