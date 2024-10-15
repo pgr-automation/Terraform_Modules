@@ -1,7 +1,8 @@
 # Terraform Modules
 
 ## Create EC2 instance
-
+ * Replace the values with your requirements.
+ 
 ```hcl
 provider "aws" {
   region = "us-east-1"
@@ -25,4 +26,12 @@ output "formatted_instance_details" {
     for detail in module.ec2_instance.instance_details : "Instance-Name=${detail.name}, Instance-ID=${detail.id}, Instance Public-IP=${detail.public_ip}, Instance Private-IP=${detail.private_ip}"
   ]
 }
+```
+
+## Terrafrom Commands
+```bash
+1. terraform init
+2. terraform validate
+3. terraform apply
+4. terraform destroy
 ```
