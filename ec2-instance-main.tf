@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 module "ec2_instance" {
-  source                     = "./ec2-instance-module"
+  source                     = "./Modules/ec2-instance-module"
   ami_id                     = "ami-06b21ccaeff8cd686"
   instance_type              = "t2.micro"
   subnet_ids                 = ["subnet-0a862bc92237aee82", "subnet-060ad16b0550c101c"]
