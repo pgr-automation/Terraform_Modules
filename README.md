@@ -2,7 +2,7 @@
 
 ## Create EC2 instance
  * Replace the values with your requirements.
- 
+
 ```hcl
 provider "aws" {
   region = "us-east-1"
@@ -30,8 +30,8 @@ output "formatted_instance_details" {
 
 ## Terrafrom Commands
 ```bash
-1. terraform init
-2. terraform validate
-3. terraform apply
-4. terraform destroy
+1. terraform init  # To initialize terraform
+2. terraform validate # To validate your Code
+3. terraform apply  # To apply the Code for resource creation 
+4. terraform destroy # To delete all the resources which is created by your terrafrom code.
 ```
