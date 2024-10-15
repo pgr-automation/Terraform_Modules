@@ -1,7 +1,7 @@
 # Terraform Modules
 
-## Create EC2 instance
- * Replace the values with your requirements.
+## Create EC2 instance  - You Need to write only below Code
+ ## * Replace the values with your requirements.
 
 ```hcl
 provider "aws" {
