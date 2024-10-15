@@ -32,6 +32,7 @@ output "formatted_instance_details" {
 ```bash
 1. terraform init  # To initialize terraform
 2. terraform validate # To validate your Code
-3. terraform apply  # To apply the Code for resource creation 
-4. terraform destroy # To delete all the resources which is created by your terrafrom code.
+3. terraform plan  # Check the resource plan before apply and validate
+4. terraform apply  # To apply the Code for resource creation 
+5. terraform destroy # To delete all the resources which is created by your terrafrom code.
 ```
