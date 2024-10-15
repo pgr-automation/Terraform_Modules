@@ -1,6 +1,6 @@
 # Terraform Modules
 
-## Create EC2 instance  - You Need to write only below Code
+## Create EC2 instance (One / More)  - You Need to write only below Code
  ## * Replace the values with your requirements.
 
 ```hcl
