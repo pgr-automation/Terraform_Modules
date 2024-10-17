@@ -8,7 +8,7 @@ provider "aws" {
 }
 
 module "vpc" {
-  source                     = "github.com/pgr-automation/Terraform_Modules/tree/main/Modules/vpc-module"
+  source                     = "github.com/pgr-automation/Terraform_Modules/Modules/vpc-module"
   vpc_cidr                   = "12.0.0.0/16"
   public_subnet_cidrs        = ["12.0.1.0/24", "12.0.2.0/24"]
   private_subnet_cidrs       = ["12.0.3.0/24", "12.0.4.0/24"]
