@@ -11,7 +11,7 @@ provider "aws" {
 module "pgr_target_group" {
   source               = "github.com/pgr-automation/Terraform_Modules/Modules/target-group-module/"
   region               = "us-west-2"  # Your desired region
-  name                 = "my-target-group"
+  name                 = "pgr-target-group"
   port                 = 80
   protocol             = "HTTP"
   vpc_id               = "vpc-05831f9e51be19737"  # Replace with your VPC ID
@@ -35,7 +35,7 @@ module "pgr_target_group" {
 
 ```
 
-### To use values from vars - target groups
+### To use values from vars/modules - target groups
 
 ```hcl
   ####### Utilize with EC2 moudule ######
