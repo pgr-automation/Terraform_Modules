@@ -1,6 +1,9 @@
 resource "aws_security_group" "alb_sg" {
   name        = var.alb_sg_name
   description = "Allow HTTP and HTTPS traffic to ALB"
+  tags = {
+    Name= "${var.alb_sg_name}"
+  }
 
   ingress {
     from_port   = 80
@@ -27,6 +30,10 @@ resource "aws_security_group" "alb_sg" {
 resource "aws_security_group" "asg_sg" {
   name        = var.asg_sg_name
   description = "Allow traffic from ALB to instances in the ASG"
+  tags = {
+    Name= "${var.asg_sg_name}"
+  }
+
 
   ingress {
     from_port   = 80
