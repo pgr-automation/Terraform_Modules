@@ -65,11 +65,7 @@ variable "alb_tg_target_ids" {
   description = "A list of EC2 instance IDs to register with the target group."
   type        = list(string)
 }
-variable "alb_tg_attachemen_port" {
-    description = " pgr_alb_tg_attachemen port"
-    type = string
-  
-}
+
 variable "alb_name" {
     description = "alb name"
     type = string
