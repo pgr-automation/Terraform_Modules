@@ -2,10 +2,7 @@ variable "alb_target_group_name" {
     description = " alb tg name"
     type = string
 }
-variable "alb_security_group" {
-    description = " alb tg name"
-    type = string
-}
+
 variable "alb_tg_port" {
     description = "alb tg port"
     type = number
