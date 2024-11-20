@@ -84,3 +84,9 @@ variable "pgr_alb_subnets" {
     description = "alb subnets"
   
 }
+
+variable "pgr-alb_accessLogs" {
+    description = "s3 bucket to store alb logs"
+    type = string
+  
+}

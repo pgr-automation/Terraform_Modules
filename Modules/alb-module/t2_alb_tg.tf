@@ -19,9 +19,24 @@ resource "aws_lb_target_group" "pgr-alb-tg" {
   }
 }
 
-resource "aws_lb_target_group_attachment" "pgr_alb_tg_attachement" {
-  count              = length(var.pgr_alb_tg_target_ids)
-  target_group_arn   = aws_lb_target_group.pgr-alb-tg.arn
-  target_id          = var.pgr_alb_tg_target_ids[count.index]
-  port               = var.pgr_alb_tg_attachemen_port
+resource "aws_lb_listener" "alb_http_listner" {
+  load_balancer_arn = aws_lb.pgr-alb.arn
+  port = 80
+  protocol = "HTTP"
+  default_action {
+      type = "forword"
+      target_group_arn = aws_lb_target_group.pgr-alb-tg.arn
+    }
 }
+resource "aws_lb_listener" "alb_https_lister" {
+  load_balancer_arn = aws_lb.pgr-alb.arn
+  port = 443
+  protocol = "HTTPS"
+  ssl_policy = "ELBSecurityPolicy-2016-08"
+  default_action {
+    type = "forword"
+    target_group_arn = aws_lb_target_group.pgr-alb-tg.arn
+  }
+  
+}
+  

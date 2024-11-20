@@ -5,6 +5,10 @@ resource "aws_lb" "pgr-alb" {
     security_groups = [var.pgr_alb_sg]
     subnets = var.pgr_alb_subnets
     enable_deletion_protection = true
+    enable_cross_zone_load_balancing = true
+    access_logs {
+      bucket = var.pgr-alb_accessLogs
+    }
 
     tags = {
       Name = "${var.pgr_alb_name}"
