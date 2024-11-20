@@ -1,17 +1,19 @@
-resource "aws_lb" "pgr-alb" {
-    name = var.pgr_alb_name
-    internal = var.pgr_alb_internal
+resource "aws_lb" "alb" {
+
+    depends_on = [ aws_s3_bucket.alb_access_log_bucket ]
+    name = var.alb_name
+    internal = var.alb_internal
     load_balancer_type = "application"
-    security_groups = [var.pgr_alb_sg]
-    subnets = var.pgr_alb_subnets
+    security_groups = [var.alb_security_group]
+    subnets = var.alb_subnets
     enable_deletion_protection = true
     enable_cross_zone_load_balancing = true
     access_logs {
-      bucket = var.pgr-alb_accessLogs
+    bucket = var.alb_accessLogs_s3_bucket
     }
 
     tags = {
-      Name = "${var.pgr_alb_name}"
+      Name = "${var.alb_name}"
     }  
 }
 
