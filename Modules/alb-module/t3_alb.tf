@@ -1,6 +1,6 @@
 resource "aws_lb" "alb" {
 
-    depends_on = [ aws_s3_bucket.alb_access_log_bucket ]
+    
     name = var.alb_name
     internal = var.alb_internal
     load_balancer_type = "application"
