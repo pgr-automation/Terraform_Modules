@@ -1,0 +1,9 @@
+cluster_name = "pgr-demo-cluster"
+eks-version = "1.29"
+eks_subnet_ids = ["subnet-0a1b2c3d4e5f6g7h8", "subnet-0a1b2c3d4e5f6g7h9"]
+aws_iam_role_name = "AmazonEKSCluster"
+node_group_name = "ng-demo-one"
+node_max_unavailable =  1
+ng_iam_role_name = "pgr-eks-worker-node-role"
+node_group_disk_size = 10
+node_group_instance_types = ["t3.medium"]
