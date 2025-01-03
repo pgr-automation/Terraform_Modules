@@ -10,7 +10,7 @@ resource "aws_instance" "example" {
   availability_zone      = var.availability_zone
   tenancy                = var.tenancy
   user_data              = var.user_data != "" ? var.user_data : null
-  tags                   = var.tags
+  #tags                   = var.tags
   iam_instance_profile   = var.iam_instance_profile != "" ? var.iam_instance_profile : null
   tags = {
     Name = "${var.instance_name}-${count.index + 1}"
