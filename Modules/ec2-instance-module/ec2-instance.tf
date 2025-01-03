@@ -7,7 +7,7 @@ resource "aws_instance" "example" {
   vpc_security_group_ids = var.security_group_ids
   associate_public_ip_address = var.associate_public_ip_address
   monitoring             = var.monitoring
-  availability_zone      = var.availability_zone
+  availability_zone      = var.availability_zone ? 1 : 0
   tenancy                = var.tenancy
   user_data              = var.user_data != "" ? var.user_data : null
   #tags                   = var.tags
