@@ -41,9 +41,9 @@ resource "aws_instance" "example" {
 
 
 
-  lifecycle {
-    prevent_destroy = var.prevent_destroy != null ? var.prevent_destroy : false
-  }
+#  lifecycle {
+#    prevent_destroy = var.prevent_destroy != null ? var.prevent_destroy : false
+#  }
 
   metadata_options {
     http_tokens  = var.metadata_http_tokens != "" ? var.metadata_http_tokens : "required"

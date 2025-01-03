@@ -185,13 +185,6 @@ variable "instance_name" {
   default     = ""
 }
 
-variable "private_ips" {
-  description = "Private IP addresses to associate with the network interface."
-  type        = list(string)
-  default     = []
-  
-}
-
 variable "instance_count" {
   description = "Number of instances to launch."
   type        = number
