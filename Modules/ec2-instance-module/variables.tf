@@ -45,6 +45,7 @@ variable "monitoring" {
 variable "availability_zone" {
   description = "The Availability Zone to launch the instance in."
   type        = string
+  default = ""
 }
 
 variable "tenancy" {
