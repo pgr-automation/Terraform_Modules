@@ -30,7 +30,7 @@ output "formatted_instance_details" {
   ]
 }
 ```
-##
+
 
 ## Terrafrom Commands
 ```bash
