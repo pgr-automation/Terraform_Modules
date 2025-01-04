@@ -4,16 +4,18 @@ provider "aws" {
 }
 
 module "ec2_instance" {
-  source                     = "github.com/pgr-automation/Terraform_Modules//Modules/ec2-instance-module/aws"  
-  ami_id                     = "ami-06b21ccaeff8cd686"
+  source                     = "./aws"  
+  ami                        = "ami-06b21ccaeff8cd686"
   instance_type              = "t2.micro"
-  subnet_id                 = [ "subnet-0a862bc92237aee82", "subnet-060ad16b0550c101c" ]
-  #subnet_id                 = [ "subnet-0a862bc92237aee82", "subnet-060ad16b0550c101c" ]
-  key_name                   = "ssh-grp-key"
-  security_group_ids         = ["sg-08217f5b0808d824a"]
+  subnet_id                  = [ "subnet-01260314a37a81914", "subnet-0aa50f5ad3a90ce63" ]
+  key_name                   = "devops_key"
+  security_group_ids         = ["sg-059757702575daec0"]
   associate_public_ip_address = true
   instance_name              = "Web-Server"
   instance_count             = 2
+  ebs_volume_size = 10
+  ebs_volume_type = "gp2"
+  ebs_device_name = "/dev/xvda"
 }
 
 output "formatted_instance_details" {

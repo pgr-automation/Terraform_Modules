@@ -1,6 +1,6 @@
 output "instance_details" {
   value = [
-    for instance in aws_instance.webserver : {
+    for instance in aws_instance.example : {
       name       = instance.tags["Name"]
       id         = instance.id
       public_ip  = instance.public_ip

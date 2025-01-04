@@ -1,6 +1,6 @@
 resource "aws_instance" "example" {
   count                  = var.instance_count
-  ami                    = var.ami_id
+  ami                    = var.ami
   instance_type          = var.instance_type
   key_name               = var.key_name
   subnet_id              = element(var.subnet_id, count.index % length(var.subnet_id))
@@ -24,7 +24,7 @@ resource "aws_instance" "example" {
   }
 
   ebs_block_device {
-    device_name           = var.ebs_device_name != "" ? var.ebs_device_name : null
+    device_name           = var.ebs_device_name != null ? var.ebs_device_name : null
     volume_size           = var.ebs_volume_size != null ? var.ebs_volume_size : null
     volume_type           = var.ebs_volume_type != "" ? var.ebs_volume_type : null
     delete_on_termination = var.ebs_delete_on_termination != null ? var.ebs_delete_on_termination : true
@@ -34,10 +34,10 @@ resource "aws_instance" "example" {
     cpu_credits = var.cpu_credits != "" ? var.cpu_credits : null
   }
 
-  network_interface {
-    device_index           = 0
-    network_interface_id   = var.network_interface_id != "" ? var.network_interface_id : null
-  }
+  #network_interface {
+  #  device_index           = 0
+  #  network_interface_id   = var.network_interface_id != "" ? var.network_interface_id : null
+  #}
 
 
 
@@ -52,14 +52,14 @@ resource "aws_instance" "example" {
  
 }
 
-output "instance_id" {
-  value = aws_instance.example.id
-}
+#output "instance_id" {
+#  value = aws_instance.example.id
+#}
 
-output "public_ip" {
-  value = aws_instance.example.public_ip
-}
+#output "public_ip" {
+#  value = aws_instance.example.public_ip
+#}
 
-output "private_ip" {
-  value = aws_instance.example.private_ip
-}
+#output "private_ip" {
+#  value = aws_instance.example.private_ip
+#}

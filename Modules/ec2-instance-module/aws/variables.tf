@@ -4,7 +4,7 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
-variable "ami_id" {
+variable "ami" {
   description = "AMI ID to launch the instance."
   type        = string
 }
