@@ -1,87 +1,71 @@
-variable "region" {
-  description = "AWS region"
-  type        = string
-  default     = "us-east-1"
+
+# Variables
+variable "cidr_block" {
+  description = "The IPv4 CIDR block for the VPC."
+  default     = "" # Change to your preferred CIDR block
 }
 
-variable "availability_zones" {
-  description = "List of availability zones to use for subnet creation"
-  type        = list(string)
-  default     = ["us-east-1a", "us-east-1b"]
+variable "instance_tenancy" {
+  description = "Tenancy option for instances launched into the VPC. Allowed values are 'default' or 'dedicated'."
+  default     = "default"
 }
 
-variable "vpc_cidr" {
-    description = "CIDR for VPC"
-    type = string
-    default = "10.0.0.0/16"
-  
-}
-variable "internet_gateway_name" {
-  description = "Name for the Internet Gateway"
-  type        = string
-  default     = "main-igw"
-}
-
-variable "public_subnet_cidrs" {
-    description = "List of CIDR blocks for public subnets"
-    type = list(string)
-    default = [ "10.0.1.0/24","10.0.2.0/24" ]
-
-  
-}
-
-variable "public_subnet_name_prefix" {
-  description = "Prefix for naming the public subnets"
-  type        = string
-  default     = "public-subnet"
-}
-
-variable "private_subnet_cidrs" {
-  description = "List of CIDR blocks for private subnets"
-  type        = list(string)
-  default     = ["10.0.3.0/24", "10.0.4.0/24"]
-}
-
-variable "private_subnet_name_prefix" {
-  description = "Prefix for naming the private subnets"
-  type        = string
-  default     = "private-subnet"
-}
-
-variable "nat_elastic_ip_name" {
-    description = "Nat elastic IP name"
-    type = string
-    default = "nat_eip"
-  
-}
-
-variable "public_route_table_name" {
-    description = "Routetable name for public"
-    type = string
-    default = "pub-rt"
-}
-
-variable "private_route_table_name" {
-    description = "Routetable name for public"
-    type = string
-    default = "private-rt"
-}
-
-variable "aws_nat_gateway_name" {
-  description = "Nat name"
-  type = string
-  default = "nat-gw"
-  
-}
-variable "enable_dns_hostnames" {
-  description = "A boolean flag to enable/disable DNS hostnames in the VPC"
-  type        = bool
-  default     = ""
-  
-}
 variable "enable_dns_support" {
-  description = "A boolean flag to enable/disable DNS support in the VPC"
-  type        = bool
-  default     = ""
-  
+  description = "A boolean flag to enable/disable DNS support in the VPC."
+  default     = true
+}
+
+variable "enable_dns_hostnames" {
+  description = "A boolean flag to enable/disable DNS hostnames in the VPC."
+  default     = false
+}
+
+variable "assign_generated_ipv6_cidr_block" {
+  description = "Request an Amazon-provided IPv6 CIDR block for the VPC."
+  default     = false
+}
+
+variable "ipv4_ipam_pool_id" {
+  description = "The ID of an IPv4 IPAM pool to allocate CIDR from."
+  default     = null
+}
+
+variable "ipv4_netmask_length" {
+  description = "The netmask length of the IPv4 CIDR to allocate."
+  default     = null
+}
+
+variable "ipv6_ipam_pool_id" {
+  description = "The ID of an IPv6 IPAM pool to allocate CIDR from."
+  default     = null
+}
+
+variable "ipv6_netmask_length" {
+  description = "The netmask length of the IPv6 CIDR to allocate."
+  default     = null
+}
+
+variable "ipv6_cidr_block" {
+  description = "The IPv6 CIDR block for the VPC."
+  default     = null
+}
+
+variable "ipv6_cidr_block_network_border_group" {
+  description = "The network border group for the IPv6 CIDR block."
+  default     = null
+}
+
+variable "enable_network_address_usage_metrics" {
+  description = "Enable network address usage metrics for the VPC."
+  default     = false
+}
+
+variable "tags" {
+  description = "A map of tags to assign to the VPC."
+  default     = {}
+}
+
+variable "vpc_name" {
+  description = "The name of the VPC."
+  default     = "MyVPC"
 }
