@@ -16,7 +16,7 @@ resource "aws_vpc" "main" {
 
   # Enable Network Address Usage Metrics (Optional)
   enable_network_address_usage_metrics = var.enable_network_address_usage_metrics
-
+#
   # Tags
   tags = {
     Name = var.vpc_name
