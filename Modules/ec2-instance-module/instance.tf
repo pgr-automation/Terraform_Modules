@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 module "ec2_instance" {
-  source                     = "github.com/pgr-automation/Terraform_Modules//Modules/ec2-instance-module//aws?ref=v2.0.0"  
+  source                     = "github.com/pgr-automation/Terraform_Modules//Modules/ec2-instance-module//aws?ref=v1.0.0"  
   ami                        = "ami-06b21ccaeff8cd686"
   instance_type              = "t2.micro"
   subnet_id                  = [ "subnet-01260314a37a81914", "subnet-0aa50f5ad3a90ce63" ]
