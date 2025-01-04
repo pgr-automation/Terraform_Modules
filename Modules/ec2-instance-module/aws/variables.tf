@@ -22,7 +22,7 @@ variable "key_name" {
 
 variable "subnet_id" {
   description = "ID of the subnet to launch the instance in."
-  type        = string
+  type        = list(string)
 }
 
 variable "security_group_ids" {

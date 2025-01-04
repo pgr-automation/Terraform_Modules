@@ -7,7 +7,8 @@ module "ec2_instance" {
   source                     = "github.com/pgr-automation/Terraform_Modules//Modules/ec2-instance-module/aws"  
   ami_id                     = "ami-06b21ccaeff8cd686"
   instance_type              = "t2.micro"
-  subnet_id                 = ["subnet-0a862bc92237aee82", "subnet-060ad16b0550c101c"]
+  subnet_id                 = [ "subnet-0a862bc92237aee82", "subnet-060ad16b0550c101c" ]
+  #subnet_id                 = [ "subnet-0a862bc92237aee82", "subnet-060ad16b0550c101c" ]
   key_name                   = "ssh-grp-key"
   security_group_ids         = ["sg-08217f5b0808d824a"]
   associate_public_ip_address = true
