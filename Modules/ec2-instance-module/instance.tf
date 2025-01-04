@@ -17,7 +17,7 @@ module "ec2_instance" {
   ebs_volume_type = "gp2"
   ebs_device_name = "/dev/xvda"
 }
-
+#
 output "formatted_instance_details" {
   value = [
     for detail in module.ec2_instance.instance_details : "Instance-Name=${detail.name}, Instance-ID=${detail.id}, Instance Public-IP=${detail.public_ip}, Instance Private-IP=${detail.private_ip}"
