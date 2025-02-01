@@ -6,7 +6,7 @@ provider "aws" {
 module "vpc" {
   source                     = "github.com/pgr-automation/Terraform_Modules/Modules/vpc-module/aws"
   vpc_cidr                   = "12.0.0.0/16"
-  public_subnet_cidrs        = ["12.0.1.0/24", "12.0.2.0/24"]
+  public_subnet_cidrs        = ["12.0.1.0/24"]
   private_subnet_cidrs       = ["12.0.3.0/24", "12.0.4.0/24"]
   region                     = "us-east-1"
   public_subnet_name_prefix  = "pgr-public-subnet"   # Custom name prefix
@@ -18,4 +18,5 @@ module "vpc" {
   public_route_table_name    = "pgr-pub-rt"
   private_route_table_name   = "pgr-private-rt"
 }
+
 
