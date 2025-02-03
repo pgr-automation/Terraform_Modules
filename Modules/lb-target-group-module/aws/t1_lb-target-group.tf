@@ -15,7 +15,6 @@ resource "aws_lb_target_group" "this" {
     timeout             = var.health_check_timeout
     healthy_threshold   = var.health_check_healthy_threshold
     unhealthy_threshold = var.health_check_unhealthy_threshold
-    matcher             = var.health_check_matcher
   }
 
   # lifecycle {
