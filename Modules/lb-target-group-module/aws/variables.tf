@@ -67,9 +67,9 @@ variable "health_check_unhealthy_threshold" {
   type        = number
   default     = 2
 }
-variable "create_before_destroy" {
-  description = "Whether to allow a target group to be destroyed and recreated during terraform apply"
-  type        = bool
-  default     = false
+# variable "create_before_destroy" {
+#   description = "Whether to allow a target group to be destroyed and recreated during terraform apply"
+#   type        = bool
+#   default     = false
   
-}
+# }
