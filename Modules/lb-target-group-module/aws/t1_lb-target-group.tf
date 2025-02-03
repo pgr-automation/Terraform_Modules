@@ -17,8 +17,8 @@ resource "aws_lb_target_group" "this" {
     unhealthy_threshold = var.health_check_unhealthy_threshold
   }
 
-  lifecycle {
-    create_before_destroy = var.create_before_destroy
-  }
+  # lifecycle {
+  #   create_before_destroy = var.create_before_destroy
+  # }
   
 }
