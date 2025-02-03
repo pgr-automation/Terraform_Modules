@@ -1,12 +1,12 @@
 variable "name" {
   description = "The name of the target group"
   type        = string
-  
+
 }
 variable "port" {
   description = "The port on which targets receive traffic"
   type        = number
-  
+
 }
 variable "protocol" {
   description = "The protocol to use for routing traffic to the targets"
@@ -71,5 +71,11 @@ variable "health_check_unhealthy_threshold" {
 #   description = "Whether to allow a target group to be destroyed and recreated during terraform apply"
 #   type        = bool
 #   default     = false
-  
+
 # }
+variable "matcher" {
+  description = "The HTTP codes to use when checking for a successful response from a target"
+  type        = string
+  default     = "200-399"
+  
+}
