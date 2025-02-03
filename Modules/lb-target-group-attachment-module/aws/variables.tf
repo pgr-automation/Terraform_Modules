@@ -1,8 +1,8 @@
-variable "name" {
-  description = "The name of the target group attachment"
-  type        = string
+# variable "name" {
+#   description = "The name of the target group attachment"
+#   type        = string
   
-}
+# }
 variable "target_group_arn" {
   description = "The ARN of the target group with which to register targets"
   type        = string
