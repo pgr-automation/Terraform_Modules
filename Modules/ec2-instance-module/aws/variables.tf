@@ -192,4 +192,9 @@ variable "instance_count" {
   default     = 1
   
 }
+variable "all_tags" {
+  description = "Custom tags to apply to EC2 instances"
+  type        = map(string)
+  default     = {}
+}
 
