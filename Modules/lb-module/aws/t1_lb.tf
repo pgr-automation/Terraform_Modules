@@ -594,7 +594,7 @@ resource "aws_lb_target_group_attachment" "this" {
   for_each = { for k, v in var.target_groups : k => v if local.create && lookup(v, "create_attachment", true) }
 
   target_group_arn  = aws_lb_target_group.this[each.key].arn
-  target_id         = each.value.target_id
+  target_id         = each.value.target_id ? each.value.target_id : aws_instance.this[each.key].id
   port              = try(each.value.target_type, null) == "lambda" ? null : try(each.value.port, var.default_port)
   availability_zone = try(each.value.availability_zone, null)
 

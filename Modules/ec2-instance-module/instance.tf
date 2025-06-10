@@ -16,7 +16,14 @@ module "ec2_instance" {
   ebs_volume_size = 10
   ebs_volume_type = "gp2"
   ebs_device_name = "/dev/xvda"
+  tags = merge(
+    {
+      Name = "${var.instance_name}-${count.index + 1}"
+    },
+    var.all_tags
+  )
 }
+
 
 output "formatted_instance_details" {
   value = [

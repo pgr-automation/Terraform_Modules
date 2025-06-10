@@ -14,10 +14,10 @@ resource "aws_instance" "example" {
   #tags                   = var.tags
   iam_instance_profile   = var.iam_instance_profile != "" ? var.iam_instance_profile : null
   tags = merge(
-  {
+    {
     Name = "${var.instance_name}-${count.index + 1}"
-  },
-  var.all_tags
+    },
+    var.all_tags
 )
   
   
