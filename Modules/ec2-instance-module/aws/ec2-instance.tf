@@ -13,9 +13,12 @@ resource "aws_instance" "example" {
   user_data              = var.user_data != "" ? var.user_data : null
   #tags                   = var.tags
   iam_instance_profile   = var.iam_instance_profile != "" ? var.iam_instance_profile : null
-  tags = {
+  tags = merge(
+  {
     Name = "${var.instance_name}-${count.index + 1}"
-  }
+  },
+  var.all_tags
+)
   
   
   root_block_device {
